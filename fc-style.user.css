@@ -1,0 +1,110 @@
+/* ==UserStyle==
+@name         Desktop Forocoches
+@namespace    nisgrak
+@description  Correcciones al nuevo estilo de Forocoches
+@version      0.0.1
+@author       Nisgrak
+@homepageURL  https://github.com/Nisgrak/desktop-forocoches
+@updateURL    https://github.com/Nisgrak/desktop-forocoches/fc-style.user.css
+@supportURL   https://github.com/Nisgrak/desktop-forocoches/issues
+@license      GPL
+@preprocessor stylus
+
+
+==/UserStyle== */
+@-moz-document regexp("(http[s]?:\\/\\/)*(www\\.)?forocoches.*") {
+    main {
+        margin: 0px;
+        width: 100%;
+        max-width: unset;
+        grid-template-columns: auto auto;
+    }
+
+    #sidebar {
+    }
+
+    section > div[id^=post]:not([id^='post_']) {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 15% 21px 1fr;
+        grid-template-rows: unset;
+        grid-template-areas: 'user separator content' 'controls separator content';
+
+        /* Separator */
+        > separator {
+            height: 100%;
+            width: 1px;
+            grid-area: separator;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            background-color: rgb(141, 141, 141);
+        }
+
+        /* User */
+        > div:nth-child(2):not(.smallfont), > div:first-child:not(separator) {
+            /* background-color: white; */
+            grid-area: user;
+            flex-direction: column;
+            justify-items: center;
+
+            /* Avatar, Username and description */
+            > :first-child {
+                flex-direction: column;
+
+                /* Avatar */
+                > a {
+                    height: 130px !important;
+
+                    .thread-profile-image {
+                        height: 130px !important;
+                        width: 130px !important;
+                    }
+                }
+
+                /* Username and description */
+                > :last-child {
+                    align-items: center;
+                    margin-left: 0px !important;
+                    margin-top: 20px;
+                }
+            }
+
+            /* Message info */
+            > :last-child {
+                align-items: center !important;
+                margin-top: 25px;
+            }
+        }
+
+        /* Content */
+        > div[id^='post_'] {
+            /* background-color: red; */
+            grid-area: content;
+        }
+
+        /* Controls */
+        > div:nth-last-child(2) {
+            /* background-color: green; */
+            grid-area: controls;
+            justify-content: flex-end;
+
+            > separator {
+                display: none;
+            }
+
+            > :last-child {
+                flex-direction: row;
+                align-items: flex-end !important;
+
+                span:last-child {
+                    display: none;
+                }
+
+                > a:last-child {
+                    margin-left: 0px !important;
+                }
+            }
+        }
+    }
+}
