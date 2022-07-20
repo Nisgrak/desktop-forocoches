@@ -2,7 +2,7 @@
 @name         Desktop Forocoches
 @namespace    nisgrak
 @description  Correcciones al nuevo estilo de Forocoches
-@version      0.0.1
+@version      0.0.2
 @author       Nisgrak
 @homepageURL  https://github.com/Nisgrak/desktop-forocoches
 @updateURL    https://github.com/Nisgrak/desktop-forocoches/fc-style.user.css
@@ -17,7 +17,7 @@
         margin: 0px;
         width: 100%;
         max-width: unset;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr auto;
     }
 
     #sidebar {
