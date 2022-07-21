@@ -123,22 +123,23 @@
                         display: flex;
                         justify-content: center;
                         margin-bottom: 0px !important;
+
                         > a {
                             position: absolute;
                         left: 0px;
                         }
-                        > span {
 
+                        > span {
                         }
                     }
 
-                    /* Post Number*/
+                    /* Post Number */
                     > a {
                         position: absolute;
                         right: 0px;
+
                         > div {
                         font-size: 14px;
-
                         }
                     }
                 }
