@@ -65,6 +65,7 @@
                     .thread-profile-image {
                         height: 130px !important;
                         width: 130px !important;
+                        border-radius: 10% !important;
                     }
                 }
 
