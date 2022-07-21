@@ -115,7 +115,7 @@
             > div:nth-last-child(2) {
                 /* background-color: green; */
                 grid-area: controls;
-                justify-content: flex-end;
+                justify-content: flex-start;
                 flex-direction: column-reverse !important;
 
                 > separator {
@@ -125,6 +125,7 @@
                 > div:not(.date-and-time-gray) {
                     flex-direction: row;
                     align-items: flex-end !important;
+                    max-height: 24px;
 
                     span:last-child {
                         display: none;
