@@ -95,12 +95,13 @@
             /* background-color: green; */
             grid-area: controls;
             justify-content: flex-end;
+            flex-direction: column-reverse;
 
             > separator {
                 display: none;
             }
 
-            > :last-child {
+            > div:not(.date-and-time-gray) {
                 flex-direction: row;
                 align-items: flex-end !important;
 
@@ -111,6 +112,11 @@
                 > a:last-child {
                     margin-left: 0px !important;
                 }
+            }
+
+            > div.date-and-time-gray {
+                text-align: center;
+
             }
         }
     }
