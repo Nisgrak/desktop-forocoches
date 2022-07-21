@@ -96,7 +96,7 @@
             /* background-color: green; */
             grid-area: controls;
             justify-content: flex-end;
-            flex-direction: column-reverse;
+            flex-direction: column-reverse !important;
 
             > separator {
                 display: none;
