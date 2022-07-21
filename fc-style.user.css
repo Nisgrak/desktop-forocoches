@@ -139,6 +139,8 @@
                         right: 0px;
 
                         > div {
+                            color: var(--coral);
+                            font-weight: bold;
                             font-size: 14px;
                         }
                     }
