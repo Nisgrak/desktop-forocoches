@@ -53,6 +53,7 @@
             grid-area: user;
             flex-direction: column;
             justify-items: center;
+            justify-content: flex-start !important;
 
             /* Avatar, Username and description */
             > :first-child {
