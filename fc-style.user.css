@@ -47,6 +47,10 @@
         grid-template-columns: 1fr auto;
     }
 
+    #social-networks {
+        grid-area: social-networks;
+    }
+
     #sidebar {
     }
 
