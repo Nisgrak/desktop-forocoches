@@ -221,18 +221,14 @@
     }
 }
 
-
 @-moz-document regexp("(http[s]?:\\/\\/)*www.tiktok.com/embed/v2/.*?.*") {
-   
     /* Background */
-    div[data-testid="card-component"] {
+    div[data-testid='card-component'] {
         background-color: white;
     }
 
-    
     /* Fondo de body para igualar el color del post */
     html, body, .main-body, #root, #main, #main > div {
         background-color: transparent !important;
     }
-} 
-
+}
