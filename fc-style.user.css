@@ -47,6 +47,31 @@
         grid-template-columns: 1fr auto;
     }
 
+    #container {
+        /* Lista de páginas */
+        > section:nth-child(3) > div > div {
+            justify-content: center !important;
+
+            /* Ir a Primera página */
+            > :nth-child(1) {
+                margin-right: 25px;
+            }
+
+            /* Páginas */
+            > :nth-child(2) {
+                span {
+                    margin-right: 0px !important;
+                    margin-left: 0px !important;
+                }
+            }
+
+            /* Ir a Última página */
+            > :nth-child(3) {
+                margin-left: 25px;
+            }
+        }
+    }
+
     #social-networks {
         grid-area: social-networks;
     }
