@@ -110,6 +110,37 @@
                 > :last-child {
                     align-items: center !important;
                     margin-top: 25px;
+                    flex-direction: row !important;
+                    justify-content: center;
+                    order: -1;
+                    position: relative;
+                    margin-top: 5px;
+                    margin-bottom: 15px;
+
+                    > div {
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        margin-bottom: 0px !important;
+                        > a {
+                            position: absolute;
+                        left: 0px;
+                        }
+                        > span {
+
+                        }
+                    }
+
+                    /* Post Number*/
+                    > a {
+                        position: absolute;
+                        right: 0px;
+                        > div {
+                        font-size: 14px;
+
+                        }
+                    }
                 }
             }
 
