@@ -13,6 +13,22 @@
 
 ==/UserStyle== */
 @-moz-document regexp("(http[s]?:\\/\\/)*(www\\.)?forocoches.*") {
+    body.dark_theme {
+        --background-color: #101010;
+        --header-menu-search-background: #101010;
+        --body-background-color: #101010;
+        --menu-background-color: #101010;
+    }
+
+    body.dark_theme .dd-menu .dropdown-menu-bg {
+        background-color: #2e2e2e !important;
+    }
+
+    header {
+        box-shadow: unset !important;
+        -webkit-box-shadow: unset !important;
+    }
+
     #header {
         max-width: unset;
         margin: unset;
