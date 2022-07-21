@@ -50,7 +50,7 @@
     #sidebar {
     }
 
-    section {
+    div[id^='edit'] > section {
         padding: 12px !important;
 
         > div[id^=post]:not([id^='post_']) {
