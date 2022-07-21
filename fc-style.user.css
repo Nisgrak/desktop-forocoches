@@ -18,10 +18,15 @@
         --header-menu-search-background: #101010;
         --body-background-color: #101010;
         --menu-background-color: #101010;
+        --quote-background-color: #303030;
+
+        .dd-menu .dropdown-menu-bg {
+            background-color: #2e2e2e !important;
+        }
     }
 
-    body.dark_theme .dd-menu .dropdown-menu-bg {
-        background-color: #2e2e2e !important;
+    body {
+        --quote-background-color: #efefef;
     }
 
     header {
@@ -109,6 +114,10 @@
                 /* background-color: red; */
                 grid-area: content;
                 padding: 15px;
+
+                > .squote {
+                    background-color: var(--quote-background-color);
+                }
             }
 
             /* Controls */
