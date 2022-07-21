@@ -29,7 +29,10 @@
     #sidebar {
     }
 
-    section > div[id^=post]:not([id^='post_']) {
+    section {
+        padding: 12px !important;
+
+        > div[id^=post]:not([id^='post_']) {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 15% 21px 1fr;
@@ -89,6 +92,7 @@
         > div[id^='post_'] {
             /* background-color: red; */
             grid-area: content;
+                padding: 15px;
         }
 
         /* Controls */
@@ -117,7 +121,7 @@
 
             > div.date-and-time-gray {
                 text-align: center;
-
+                }
             }
         }
     }
