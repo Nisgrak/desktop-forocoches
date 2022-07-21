@@ -126,7 +126,7 @@
 
                         > a {
                             position: absolute;
-                        left: 0px;
+                            left: 0px;
                         }
 
                         > span {
@@ -139,7 +139,7 @@
                         right: 0px;
 
                         > div {
-                        font-size: 14px;
+                            font-size: 14px;
                         }
                     }
                 }
@@ -153,6 +153,11 @@
 
                 > .squote {
                     background-color: var(--quote-background-color);
+                }
+
+                /* Tiktok */
+                iframe[name^='__tt_embed__'] {
+                    height: 100vh !important;
                 }
             }
 
@@ -188,3 +193,19 @@
         }
     }
 }
+
+
+@-moz-document regexp("(http[s]?:\\/\\/)*www.tiktok.com/embed/v2/.*?.*") {
+   
+    /* Background */
+    div[data-testid="card-component"] {
+        background-color: white;
+    }
+
+    
+    /* Fondo de body para igualar el color del post */
+    html, body, .main-body, #root, #main, #main > div {
+        background-color: transparent !important;
+    }
+} 
+
