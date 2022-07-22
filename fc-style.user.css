@@ -222,7 +222,7 @@
                         grid-template-rows: 1fr;
                         grid-template-areas: 'info link';
                         position: relative;
-                        height: 90%;
+                        height: calc(100% - 40px);
                         --padding-bottom-icons: 0px;
                         --padding-left-icons: 15px;
                         --icons-size: 43px;
