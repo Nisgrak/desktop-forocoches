@@ -10,15 +10,27 @@
 @license      GPL
 @preprocessor stylus
 
-
+@var color bgColor "Fondo Color" #ffe816
+@var color sectionBgColor "Sección Color" #ffe816
+@var color separatorColor "Separador Color" #ffe816
+@var color quoteBgColor "Cita Fondo Color" #ffe816
+@var color quoteTitleColor "Cita Título Color" #ffe816
+@var color quoteTextColor "Cita Texto Color" #ffe816
+@var checkbox quoteBorder "Cita Border" 1
 ==/UserStyle== */
 @-moz-document regexp("(http[s]?:\\/\\/)*(www\\.)?forocoches.*") {
+    $defaultVarColor = '#ffe816';
+
     body.dark_theme {
-        --background-color: #101010;
-        --header-menu-search-background: #101010;
-        --body-background-color: #101010;
-        --menu-background-color: #101010;
-        --quote-background-color: #303030;
+        --background-color: bgColor != $defaultVarColor ? bgColor : #101010;
+        --header-menu-search-background: bgColor != $defaultVarColor ? bgColor : #101010;
+        --body-background-color: bgColor != $defaultVarColor ? bgColor : #101010;
+        --menu-background-color: bgColor != $defaultVarColor ? bgColor : #101010;
+        --section-background-color: sectionBgColor != $defaultVarColor ? sectionBgColor : #2a2a2a;
+        --quote-background-color: quoteBgColor != $defaultVarColor ? quoteBgColor : #303030;
+        --quote-title-color: quoteTitleColor != $defaultVarColor ? quoteTitleColor : #ffffff;
+        --quote-text-color: quoteTextColor != $defaultVarColor ? quoteTextColor : #ffffff;
+        --separator-color: separatorColor != $defaultVarColor ? separatorColor : #8d8d8d;
 
         .dd-menu .dropdown-menu-bg {
             background-color: #2e2e2e !important;
@@ -26,7 +38,16 @@
     }
 
     body {
-        --quote-background-color: #efefef;
+        --background-color: bgColor != $defaultVarColor ? bgColor : white;
+        --header-menu-search-background: bgColor != $defaultVarColor ? bgColor : white;
+        --body-background-color: bgColor != $defaultVarColor ? bgColor : white;
+        --menu-background-color: bgColor != $defaultVarColor ? bgColor : white;
+        --section-background-color: sectionBgColor != $defaultVarColor ? sectionBgColor : white;
+        --quote-background-color: quoteBgColor != $defaultVarColor ? quoteBgColor : #efefef;
+        --quote-title-color: quoteTitleColor != $defaultVarColor ? quoteTitleColor : #000000;
+        --quote-text-color: quoteTextColor != $defaultVarColor ? quoteTextColor : #000000;
+        --separator-color: separatorColor != $defaultVarColor ? separatorColor : #8d8d8d;
+
     }
 
     header {
@@ -112,7 +133,7 @@
                 margin-left: 10px;
                 margin-right: 10px;
                 border-radius: 5px;
-                background-color: rgb(141, 141, 141);
+                background-color: var(--separator-color);
             }
 
             /* User */
@@ -196,6 +217,21 @@
 
                 > .squote {
                     background-color: var(--quote-background-color);
+
+                    > .quote {
+
+                        if quoteBorder != 1 {
+                            border: 0px !important;
+                        }
+
+                        div:first-child {
+                            color: var(--quote-title-color);
+                        }
+
+                        div:last-child {
+                            color: var(--quote-text-color);
+                        }
+                    }
                 }
 
                 /* Tiktok */
