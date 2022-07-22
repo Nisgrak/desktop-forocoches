@@ -207,6 +207,11 @@
             /* Info */
             > div[id^='postmenu_'] {
                 display: block !important;
+                position: unset !important;
+                z-index: unset !important;
+                clip: unset !important;
+                left: unset !important;
+                top: unset !important;
 
                 > div {
                     padding: 0px !important;
