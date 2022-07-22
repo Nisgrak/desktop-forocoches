@@ -48,8 +48,21 @@
     }
 
     #container {
+        /* Título */
+        > section:nth-child(1) {
+            > div > button > span {
+                height: 30px;
+                width: 30px;
+            }
+
+            > div > h1 {
+                font-size: 20px;
+            }
+        }
+
         /* Lista de páginas */
-        > section:nth-child(3) > div > div {
+        > section:nth-child(2) {
+            > div > div {
             justify-content: center !important;
 
             /* Ir a Primera página */
@@ -68,6 +81,7 @@
             /* Ir a Última página */
             > :nth-child(3) {
                 margin-left: 25px;
+                }
             }
         }
     }
