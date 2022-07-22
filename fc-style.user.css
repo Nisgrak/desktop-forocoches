@@ -230,21 +230,16 @@
                         height: calc(100% - 40px);
                         --padding-bottom-icons: 0px;
                         --padding-left-icons: 15px;
-                        --icons-size: 43px;
+                        --icons-size: 34px;
 
                         > separator {
                             display: none;
                         }
 
                         > h2 {
-                            grid-area: link;
                             visibility: hidden;
-                            display: flex;
-                            align-items: flex-start;
-                            padding-top: 5px;
-                            flex-direction: row-reverse;
 
-                            > a {
+                            > a, a > span {
                                 visibility: visible;
                             }
                         }
@@ -254,9 +249,13 @@
                             width: 120px;
                             margin-left: 30px;
                             text-align: center;
+
+                            > p:empty {
+                                display: none;
+                            }
                         }
 
-                        > a {
+                        > a, h2 > a {
                             visibility: hidden;
                             width: 15px;
 
@@ -279,7 +278,9 @@
                                 text-align: center;
                                 white-space: nowrap;
                                 background-color: #2e2e2e;
+                                color: var(--coral);
                                 visibility: visible;
+                                font-weight: 400;
                             }
 
                             &:hover::after {
@@ -287,11 +288,25 @@
                             }
                         }
 
+                        > h2 >a {
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 0));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/ri:user-3-fill.svg?color=%23ff5845');
+                            }
+
+                            &:after {
+                                content: 'Ver Usuario';
+                            }
+                        }
+
                         > a[href^='private.php'] {
                             grid-area: mp;
 
                             &:before, &:after {
-                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 0));
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 1));
                             }
 
                             &:before {
@@ -307,7 +322,7 @@
                             grid-area: msg;
 
                             &:before, &:after {
-                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 1));
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 2));
                             }
 
                             &:before {
@@ -323,7 +338,7 @@
                             grid-area: thread;
 
                             &:before, &:after {
-                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 2));
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 3));
                             }
 
                             &:before {
@@ -339,7 +354,7 @@
                             grid-area: contact;
 
                             &:before, &:after {
-                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 3));
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 4));
                             }
 
                             &:before {
@@ -355,7 +370,7 @@
                             grid-area: ignore;
 
                             &:before, &:after {
-                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 4));
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 5));
                             }
 
                             &:before {
@@ -397,6 +412,7 @@
 
                 > div.date-and-time-gray {
                     text-align: center;
+                    margin-bottom: 30px;
                 }
             }
         }
