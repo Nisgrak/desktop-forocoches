@@ -222,8 +222,8 @@
                         grid-template-rows: 1fr;
                         grid-template-areas: 'info link';
                         position: relative;
-                        height: 100%;
-                        --padding-bottom-icons: 40px;
+                        height: 90%;
+                        --padding-bottom-icons: 0px;
                         --padding-left-icons: 15px;
                         --icons-size: 43px;
 
