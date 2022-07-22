@@ -94,13 +94,14 @@
     #sidebar {
     }
 
+    /* Message */
     div[id^='edit'] > section {
         padding: 12px !important;
 
         > div[id^=post]:not([id^='post_']) {
             display: grid;
             grid-template-rows: 1fr 1fr;
-            grid-template-columns: 15% 21px 1fr;
+            grid-template-columns: 214px 21px 1fr;
             grid-template-rows: unset;
             grid-template-areas: 'user separator content' 'controls separator content';
 
