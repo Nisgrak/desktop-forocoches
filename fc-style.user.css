@@ -100,10 +100,9 @@
 
         > div[id^=post]:not([id^='post_']) {
             display: grid;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 210px 1fr 40px;
             grid-template-columns: 214px 21px 1fr;
-            grid-template-rows: unset;
-            grid-template-areas: 'user separator content' 'controls separator content';
+            grid-template-areas: 'user separator content' 'info separator content' 'controls separator content';
 
             /* Separator */
             > separator {
@@ -193,6 +192,7 @@
                 /* background-color: red; */
                 grid-area: content;
                 padding: 15px;
+                height: min-content;
 
                 > .squote {
                     background-color: var(--quote-background-color);
@@ -201,6 +201,167 @@
                 /* Tiktok */
                 iframe[name^='__tt_embed__'] {
                     height: 100vh !important;
+                }
+            }
+
+            /* Info */
+            > div[id^='postmenu_'] {
+                display: block !important;
+
+                > div {
+                    padding: 0px !important;
+                    margin: 0px !important;
+                    height: 100%;
+
+                    > div {
+                        background-color: transparent !important;
+                        border: 0px !important;
+                        box-shadow: none !important;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr;
+                        grid-template-areas: 'info link';
+                        position: relative;
+                        height: 100%;
+                        --padding-bottom-icons: 40px;
+                        --padding-left-icons: 15px;
+                        --icons-size: 43px;
+
+                        > separator {
+                            display: none;
+                        }
+
+                        > h2 {
+                            grid-area: link;
+                            visibility: hidden;
+                            display: flex;
+                            align-items: flex-start;
+                            padding-top: 5px;
+                            flex-direction: row-reverse;
+
+                            > a {
+                                visibility: visible;
+                            }
+                        }
+
+                        > div {
+                            grid-area: info;
+                            width: 120px;
+                            margin-left: 30px;
+                            text-align: center;
+                        }
+
+                        > a {
+                            visibility: hidden;
+                            width: 15px;
+
+                            &:before {
+                                visibility: visible;
+                                position: absolute;
+                                bottom: var(--padding-bottom-icons);
+                            }
+
+                            &:after {
+                                padding: 2px;
+                                padding-left: 15px;
+                                padding-right: 15px;
+                                display: none;
+                                position: absolute;
+                                bottom: calc(var(--padding-bottom-icons) + 20px);
+                                border: 1px solid grey;
+                                border-radius: 8px;
+                                z-index: 15;
+                                text-align: center;
+                                white-space: nowrap;
+                                background-color: #2e2e2e;
+                                visibility: visible;
+                            }
+
+                            &:hover::after {
+                                display: block;
+                            }
+                        }
+
+                        > a[href^='private.php'] {
+                            grid-area: mp;
+
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 0));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/ic:baseline-email.svg?color=%23a4a4a4');
+                            }
+
+                            &:after {
+                                content: 'Enviar Mensaje Privado';
+                            }
+                        }
+
+                        > a[href^='search.php']:not([href*='starteronly']) {
+                            grid-area: msg;
+
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 1));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/ic:outline-message.svg?color=%23a4a4a4');
+                            }
+
+                            &:after {
+                                content: 'Ver Mensajes';
+                            }
+                        }
+
+                        > a[href^='search.php'][href*='starteronly'] {
+                            grid-area: thread;
+
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 2));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/mdi:message.svg?color=%23a4a4a4');
+                            }
+
+                            &:after {
+                                content: 'Ver Temas Iniciados';
+                            }
+                        }
+
+                        > a[href^='profile.php']:not([href*='ignore']) {
+                            grid-area: contact;
+
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 3));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/bx:bxs-user-plus.svg?color=%23a4a4a4');
+                            }
+
+                            &:after {
+                                content: 'Añadir a Lista de Contactos';
+                            }
+                        }
+
+                        > a[href^='profile.php'][href*='ignore'] {
+                            grid-area: ignore;
+
+                            &:before, &:after {
+                                left: calc(var(--padding-left-icons) + (var(--icons-size) * 4));
+                            }
+
+                            &:before {
+                                content: url('https://api.iconify.design/wpf:mute.svg?color=%23a4a4a4');
+                            }
+
+                            &:after {
+                                content: 'Añadir a lista de ignorados';
+                            }
+                        }
+                    }
                 }
             }
 
