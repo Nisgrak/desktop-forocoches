@@ -40,7 +40,7 @@
     body {
         --background-color: bgColor != $defaultVarColor ? bgColor : white;
         --header-menu-search-background: bgColor != $defaultVarColor ? bgColor : white;
-        --body-background-color: bgColor != $defaultVarColor ? bgColor : white;
+        --body-background-color: bgColor != $defaultVarColor ? bgColor : #f5f5f5;
         --menu-background-color: bgColor != $defaultVarColor ? bgColor : white;
         --section-background-color: sectionBgColor != $defaultVarColor ? sectionBgColor : white;
         --quote-background-color: quoteBgColor != $defaultVarColor ? quoteBgColor : #efefef;
