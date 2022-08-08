@@ -47,7 +47,6 @@
         --quote-title-color: quoteTitleColor != $defaultVarColor ? quoteTitleColor : #000000;
         --quote-text-color: quoteTextColor != $defaultVarColor ? quoteTextColor : #000000;
         --separator-color: separatorColor != $defaultVarColor ? separatorColor : #8d8d8d;
-
     }
 
     header {
@@ -219,8 +218,7 @@
                     background-color: var(--quote-background-color);
 
                     > .quote {
-
-                        if quoteBorder != 1 {
+                        if (quoteBorder != 1) {
                             border: 0px !important;
                         }
 
@@ -436,9 +434,60 @@
                     flex-direction: row;
                     align-items: flex-end !important;
                     max-height: 24px;
+                    position: relative;
 
                     span:last-child {
                         display: none;
+                    }
+
+                    a {
+                        --padding-bottom-icons: 0px;
+
+                        &:after {
+                            padding: 2px;
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            display: none;
+                            position: absolute;
+                            bottom: calc(var(--padding-bottom-icons) + 35px);
+                            border: 1px solid grey;
+                            border-radius: 8px;
+                            z-index: 15;
+                            text-align: center;
+                            white-space: nowrap;
+                            background-color: #2e2e2e;
+                            color: var(--coral);
+                            visibility: visible;
+                            font-weight: 400;
+                        }
+
+                        &:hover::after {
+                            display: block;
+                        }
+                    }
+
+                    > a[href^='report.php'] {
+                        &:after {
+                            content: 'Reportar';
+                        }
+                    }
+
+                    > div:nth-child(2) > a {
+                        &:after {
+                            content: 'Responder';
+                        }
+                    }
+
+                    > a:nth-child(3) {
+                        &:after {
+                            content: 'Citar';
+                        }
+                    }
+
+                    > a:nth-child(4):has(> img[src$='add_on.svg']) {
+                        &:after {
+                            content: 'Añadir a multicita';
+                        }
                     }
 
                     > a:last-child {
