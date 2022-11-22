@@ -236,6 +236,11 @@
                 iframe[name^='__tt_embed__'] {
                     height: 100vh !important;
                 }
+                
+                /* Twitter */
+                div.twitter-tweet {
+                    width: 550px;
+                }
             }
 
             /* Info */
