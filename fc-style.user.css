@@ -2,7 +2,7 @@
 @name         Desktop Forocoches
 @namespace    nisgrak
 @description  Correcciones al nuevo estilo de Forocoches
-@version      0.0.21
+@version      0.0.22
 @author       Nisgrak
 @homepageURL  https://github.com/Nisgrak/desktop-forocoches
 @updateURL    https://github.com/Nisgrak/desktop-forocoches/raw/main/fc-style.user.css
@@ -84,9 +84,8 @@
         /* Lista de páginas */
         > section:nth-child(2) {
             > div > div {
-                justify-content: center !important;
+                justify-content: center !important; /* Ir a Primera página */
 
-                /* Ir a Primera página */
                 > :nth-child(1) {
                     margin-right: 25px;
                 }
@@ -122,9 +121,8 @@
             display: grid;
             grid-template-rows: 210px 1fr 40px;
             grid-template-columns: 214px 21px 1fr;
-            grid-template-areas: 'user separator content' 'info separator content' 'controls separator content';
+            grid-template-areas: 'user separator content' 'info separator content' 'controls separator content'; /* Separator */
 
-            /* Separator */
             > separator {
                 height: 100%;
                 width: 1px;
@@ -141,13 +139,11 @@
                 grid-area: user;
                 flex-direction: column;
                 justify-items: center;
-                justify-content: flex-start !important;
+                justify-content: flex-start !important; /* Avatar, Username and description */
 
-                /* Avatar, Username and description */
                 > :first-child {
-                    flex-direction: column;
+                    flex-direction: column; /* Avatar */
 
-                    /* Avatar */
                     > a {
                         height: 130px !important;
 
@@ -436,7 +432,7 @@
                     max-height: 24px;
                     position: relative;
 
-                    span:last-child {
+                    span:last-child:not(.post-controls-icon) {
                         display: none;
                     }
 
@@ -485,6 +481,12 @@
                     }
 
                     > a:nth-child(4):has(> img[src$='add_on.svg']) {
+                        &:after {
+                            content: 'Quitar de multicita';
+                        }
+                    }
+
+                    > a:nth-child(4):has(> img[src$='add_off.svg']) {
                         &:after {
                             content: 'Añadir a multicita';
                         }
