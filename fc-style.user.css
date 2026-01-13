@@ -47,7 +47,8 @@
         --quote-title-color: quoteTitleColor != $defaultVarColor ? quoteTitleColor : #000000;
         --quote-text-color: quoteTextColor != $defaultVarColor ? quoteTextColor : #000000;
         --separator-color: separatorColor != $defaultVarColor ? separatorColor : #8d8d8d;
-    	overflow: unset !important;
+		
+		overflow: unset !important;
     }
 	
 	div.fc-ab-root {
@@ -277,7 +278,7 @@
                             display: none;
                         }
 
-                        > h2 {
+                        > span {
                             visibility: hidden;
 
                             > a, a > span {
@@ -297,7 +298,7 @@
                             }
                         }
 
-                        > a, h2 > a {
+                        > a, span > a {
                             visibility: hidden;
                             width: 15px;
 
@@ -330,7 +331,8 @@
                             }
                         }
 
-                        > h2 >a {
+                        > span > a {
+                            
                             &:before, &:after {
                                 left: calc(var(--padding-left-icons) + (var(--icons-size) * 0));
                             }
